@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Currency Converter</title>
+	<meta name="viewport" content="width=device-width"/>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+
+<body ng-app="app">
+<div id="box" ng-controller="ConvertCtrl">
+	<h2>Currency Converter</h2>
+	<table>
+		<tr>
+			<td>
+				<p>Type in amount and select currency:</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="number" placeholder="0.00" ng-model="fromValue" ng-keyup="ConvertCurrency();" min='0'>
+				<select ng-model="fromType" required ng-change="getRate();" ng-options="f as f.label for f in rates"></select>
+			</td>
+		</tr> 
+		<tr>
+			<td>
+				<p>Converted amount:</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="text" placeholder="0.00" ng-model="toValue" ng-keyup="ConvertCurrency()">
+				<select ng-model="toType" required ng-change="ConvertCurrency()" ng-options="f as f.label for f in toRates"></select>
+			</td>
+		</tr>
+		<tr style="text-align:right;">
+			<td>
+				<p><a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html">Disclaimer</a></p>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<script src="js/currency-converter.js"></script>
+	
+</body>
+</html>

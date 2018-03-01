@@ -1,0 +1,13 @@
+#box{
+	width: 300px;
+	margin: 0px auto;
+	border: 2px solid black;
+}
+
+h2{
+	text-align: center;
+}
+
+table{
+	margin: 0px auto;
+}
